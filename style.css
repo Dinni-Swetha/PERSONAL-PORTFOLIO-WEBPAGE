@@ -1,3 +1,15 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --primary: #4f46e5;
+}
+
+body.dark-mode {
+  --bg: #111111;
+  --text: #ffffff;
+  --primary: #8b5cf6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,28 +18,21 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
 }
 
 .nav-links {
@@ -39,48 +44,55 @@ nav {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .hero {
-  background: #007BFF;
-  color: white;
-  padding: 5rem 2rem;
   text-align: center;
+  padding: 4rem 1rem;
 }
 
-.about, .projects, .contact {
-  padding: 4rem 2rem;
-  background: white;
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .project-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
 .project-card {
-  background: #f0f0f0;
+  border: 1px solid #ccc;
   padding: 1rem;
-  flex: 1 1 300px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: #222;
-  color: #ccc;
+  background-color: var(--primary);
+  color: white;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-  }
-
   .project-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
